@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 import io.github.mklew.geda.autodiscovery.domain.impl.PersonImpl;
 import io.github.mklew.geda.autodiscovery.dto.PersonDto;
 import io.github.mklew.geda.autodiscovery.dto.impl.PersonDtoImpl;
+import io.github.mklew.geda.autodiscovery.internal.DtoEntitySplitterImpl;
 import org.fest.assertions.Assertions;
 import org.mockito.Mockito;
 import org.testng.annotations.Test;
@@ -28,7 +29,7 @@ public class DtoEntitySplitterTest
         toRegister.add(PersonImpl.class);
         toRegister.add(PersonDtoImpl.class);
 
-        dtoEntitySplitter = new DtoEntitySplitter();
+        dtoEntitySplitter = new DtoEntitySplitterImpl();
 
         // when
         DtosAndEntites dtosAndEntites = dtoEntitySplitter.split(toRegister);
