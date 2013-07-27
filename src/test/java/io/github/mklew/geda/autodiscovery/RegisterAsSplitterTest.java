@@ -1,6 +1,6 @@
 package io.github.mklew.geda.autodiscovery;
 
-import io.github.mklew.geda.autodiscovery.domain.NoopConverter;
+import io.github.mklew.geda.autodiscovery.adapters.NoopConverter;
 import io.github.mklew.geda.autodiscovery.domain.impl.PersonImpl;
 import io.github.mklew.geda.autodiscovery.dto.impl.PersonDtoImpl;
 import io.github.mklew.geda.autodiscovery.internal.RegisterAsSplitterImpl;

@@ -1,4 +1,4 @@
-package io.github.mklew.geda.autodiscovery.domain;
+package io.github.mklew.geda.autodiscovery.adapters;
 
 import com.inspiresoftware.lib.dto.geda.adapter.BeanFactory;
 import com.inspiresoftware.lib.dto.geda.adapter.ValueConverter;
