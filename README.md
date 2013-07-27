@@ -8,7 +8,7 @@ Example
 1. Add DTOFactory bean. It takes variable of base packages on its constructor.
 2. Annotate your dtos and entities
 3. ???
-4 PROFIT
+4. PROFIT
 
 ````xml
 	<bean id="dtoFactory" class="io.github.mklew.geda.autodiscovery.AutoDiscoveryDTOFactoryImpl">
