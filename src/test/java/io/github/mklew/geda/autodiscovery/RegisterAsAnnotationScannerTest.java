@@ -12,6 +12,7 @@ import org.springframework.test.util.MatcherAssertionErrors;
 import org.testng.annotations.Test;
 
 import java.util.Collection;
+import java.util.Set;
 
 
 /**
@@ -40,9 +41,10 @@ public class RegisterAsAnnotationScannerTest extends AbstractTestNGSpringContext
     {
         // when
         registerAsAnnotationScanner.scan();
-        Collection<Class<?>> classes = registerAsAnnotationScanner.getClassesAnnotatedWithRegisterAs();
+        Set<Class<?>> classes = registerAsAnnotationScanner.getClassesAnnotatedWithRegisterAs();
 
         // then
         Assertions.assertThat(classes).isNotEmpty().hasSize(1).contains(PersonImpl.class);
     }
+
 }
