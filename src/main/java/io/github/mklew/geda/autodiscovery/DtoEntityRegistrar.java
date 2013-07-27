@@ -46,4 +46,19 @@ public class DtoEntityRegistrar
             dtoFactory.registerEntity(clazz.getAnnotation(RegisterAs.class).value(), clazz.getName(), representAs.getCanonicalName());
         }
     }
+
+    public void setDtoFactory(DTOFactory dtoFactory)
+    {
+        this.dtoFactory = dtoFactory;
+    }
+
+    public void setSplitter(DtoEntitySplitter splitter)
+    {
+        this.splitter = splitter;
+    }
+
+    public void setRegisterAsAnnotationScanner(RegisterAsAnnotationScanner registerAsAnnotationScanner)
+    {
+        this.registerAsAnnotationScanner = registerAsAnnotationScanner;
+    }
 }
