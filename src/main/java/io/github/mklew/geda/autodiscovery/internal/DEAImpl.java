@@ -16,10 +16,11 @@ public class DEAImpl implements DEA
 
     private Set<Class<?>> adapters;
 
-    public DEAImpl(Set<Class<?>> dtos, Set<Class<?>> entities)
+    public DEAImpl(Set<Class<?>> dtos, Set<Class<?>> entities, Set<Class<?>> adapters)
     {
         this.dtos = dtos;
         this.entities = entities;
+        this.adapters = adapters;
     }
 
     @Override public Set<Class<?>> getDtos()
