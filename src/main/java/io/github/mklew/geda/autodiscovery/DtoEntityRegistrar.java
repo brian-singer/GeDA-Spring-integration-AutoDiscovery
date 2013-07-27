@@ -18,7 +18,7 @@ public class DtoEntityRegistrar
     DTOFactory dtoFactory;
 
     @Autowired
-    DtoEntitySplitter splitter;
+    RegisterAsSplitter splitter;
 
     @Autowired
     RegisterAsAnnotationScanner registerAsAnnotationScanner;
@@ -52,7 +52,7 @@ public class DtoEntityRegistrar
         this.dtoFactory = dtoFactory;
     }
 
-    public void setSplitter(DtoEntitySplitter splitter)
+    public void setSplitter(RegisterAsSplitter splitter)
     {
         this.splitter = splitter;
     }

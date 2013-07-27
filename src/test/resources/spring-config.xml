@@ -24,7 +24,7 @@
 
     <bean class="io.github.mklew.geda.autodiscovery.DtoEntityRegistrar"/>
 
-    <bean class="io.github.mklew.geda.autodiscovery.internal.DtoEntitySplitterImpl"/>
+    <bean class="io.github.mklew.geda.autodiscovery.internal.RegisterAsSplitterImpl"/>
 
     <bean class="io.github.mklew.geda.autodiscovery.internal.RegisterAsAnnotationScannerImpl">
         <constructor-arg>

@@ -1,7 +1,7 @@
 package io.github.mklew.geda.autodiscovery;
 
 import com.inspiresoftware.lib.dto.geda.impl.DTOFactoryImpl;
-import io.github.mklew.geda.autodiscovery.internal.DtoEntitySplitterImpl;
+import io.github.mklew.geda.autodiscovery.internal.RegisterAsSplitterImpl;
 import io.github.mklew.geda.autodiscovery.internal.RegisterAsAnnotationScannerImpl;
 
 import javax.annotation.PostConstruct;
@@ -22,7 +22,7 @@ public class AutoDiscoveryDTOFactoryImpl extends DTOFactoryImpl
     @PostConstruct
     void registerDtosAndEntities()
     {
-        DtoEntitySplitter splitter = new DtoEntitySplitterImpl();
+        RegisterAsSplitter splitter = new RegisterAsSplitterImpl();
         RegisterAsAnnotationScanner scanner = new RegisterAsAnnotationScannerImpl(basePackages);
         DtoEntityRegistrar registrar = new DtoEntityRegistrar();
 
