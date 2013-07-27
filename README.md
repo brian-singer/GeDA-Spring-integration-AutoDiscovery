@@ -1,4 +1,4 @@
-GeDa Spring Integration Auto Discovery
+GeDA Spring Integration Auto Discovery
 ================================================
 
 Allows your annotated dto's and entities to be auto discovered and registered within DTOFactory.
