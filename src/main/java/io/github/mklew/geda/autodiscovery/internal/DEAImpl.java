@@ -14,6 +14,8 @@ public class DEAImpl implements DEA
 
     private Set<Class<?>> entities;
 
+    private Set<Class<?>> adapters;
+
     public DEAImpl(Set<Class<?>> dtos, Set<Class<?>> entities)
     {
         this.dtos = dtos;
@@ -28,5 +30,11 @@ public class DEAImpl implements DEA
     @Override public Set<Class<?>> getEntities()
     {
         return entities;
+    }
+
+    @Override
+    public Set<Class<?>> getAdapters()
+    {
+        return adapters;
     }
 }

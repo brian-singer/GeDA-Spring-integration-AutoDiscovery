@@ -11,4 +11,6 @@ public interface DEA
     Set<Class<?>> getDtos();
 
     Set<Class<?>> getEntities();
+
+    Set<Class<?>> getAdapters();
 }
