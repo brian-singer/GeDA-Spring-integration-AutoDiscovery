@@ -1,6 +1,7 @@
 package io.github.mklew.geda.autodiscovery;
 
-import io.github.mklew.geda.autodiscovery.domain.impl.PersonImpl;
+import java.util.Set;
+
 import org.fest.assertions.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,11 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.springframework.test.util.MatcherAssertionErrors;
 import org.testng.annotations.Test;
 
-import java.util.Collection;
-import java.util.Set;
+import io.github.mklew.geda.autodiscovery.domain.impl.PersonImpl;
+import io.github.mklew.geda.autodiscovery.internal.RegisterAsAnnotationScannerImpl;
 
 
 /**
@@ -28,7 +28,7 @@ public class RegisterAsAnnotationScannerTest extends AbstractTestNGSpringContext
         @Bean
         public RegisterAsAnnotationScanner registerAsAnnotationScanner()
         {
-            return new RegisterAsAnnotationScanner("io.github.mklew.geda.autodiscovery.domain");
+            return new RegisterAsAnnotationScannerImpl("io.github.mklew.geda.autodiscovery.domain");
         }
 
     }
