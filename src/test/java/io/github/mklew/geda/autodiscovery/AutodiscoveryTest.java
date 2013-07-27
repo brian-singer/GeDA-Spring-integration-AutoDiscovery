@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
  * @since 7/27/13
  */
 @ContextConfiguration("/spring-config.xml")
-public class AutodiscoveryTest  extends AbstractTestNGSpringContextTests
+public class AutoDiscoveryTest extends AbstractTestNGSpringContextTests
 {
     @Autowired
     DTOSupport dtoSupport;
@@ -24,36 +24,13 @@ public class AutodiscoveryTest  extends AbstractTestNGSpringContextTests
     @Test
     public void should_assemble_dto_using_auto_discovered_key()
     {
-        // given
-        Person person = new PersonImpl();
-        person.setFirstName("John");
-        person.setLastName("Doe");
-
-        // when
-        final Object oDto = dtoSupport.assembleDtoByKey("personDtoKey", person, null);
-        PersonDto personDto = (PersonDto) oDto;
-
-        // then
-        Assertions.assertThat(personDto.getFirstName()).isEqualTo(person.getFirstName());
-        Assertions.assertThat(personDto.getLastName()).isEqualTo(person.getLastName());
+        new TestCases().should_assemble_dto_using_auto_discovered_key(dtoSupport);
     }
 
     @Test
     public void should_assemble_entity_using_dto()
     {
-        // given
-        PersonDto personDto = new PersonDtoImpl();
-        personDto.setFirstName("John");
-        personDto.setLastName("Doe");
-
-        // when
-        final Object oPerson = dtoSupport.assembleEntityByKey(personDto, "personEntityKey", null);
-        Person person = (Person) oPerson;
-        personDto.setLastName("Doe modified");
-        // then
-        Assertions.assertThat(person.getFirstName()).isEqualTo("John");
-        Assertions.assertThat(person.getLastName()).isEqualTo("Doe");
-
+        new TestCases().should_assemble_entity_using_dto(dtoSupport);
     }
 
 }
