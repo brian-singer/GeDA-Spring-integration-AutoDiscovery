@@ -12,18 +12,18 @@ import javax.annotation.PostConstruct;
  */
 public class AutoDiscoveryDTOFactoryImpl extends DTOFactoryImpl
 {
-    private String basePackage;
+    private final String[] basePackages;
 
-    public AutoDiscoveryDTOFactoryImpl(String basePackage)
+    public AutoDiscoveryDTOFactoryImpl(String... basePackages)
     {
-        this.basePackage = basePackage;
+        this.basePackages = basePackages;
     }
 
     @PostConstruct
     void registerDtosAndEntities()
     {
         DtoEntitySplitter splitter = new DtoEntitySplitterImpl();
-        RegisterAsAnnotationScanner scanner = new RegisterAsAnnotationScannerImpl(basePackage);
+        RegisterAsAnnotationScanner scanner = new RegisterAsAnnotationScannerImpl(basePackages);
         DtoEntityRegistrar registrar = new DtoEntityRegistrar();
 
         registrar.setDtoFactory(this);

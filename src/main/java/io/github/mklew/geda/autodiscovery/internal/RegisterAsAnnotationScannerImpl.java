@@ -12,19 +12,18 @@ import java.util.Set;
  */
 public class RegisterAsAnnotationScannerImpl implements RegisterAsAnnotationScanner
 {
-    private String basePackage;
-
+    private final String[] basePackages;
     private Set<Class<?>> withRegisterAs;
 
-    public RegisterAsAnnotationScannerImpl(String basePackage)
+    public RegisterAsAnnotationScannerImpl(String... basePackages)
     {
-        this.basePackage = basePackage;
+        this.basePackages = basePackages;
     }
 
 
     @Override public void scan()
     {
-        final Reflections reflections = new Reflections(basePackage);
+        final Reflections reflections = new Reflections(basePackages);
         withRegisterAs = reflections.getTypesAnnotatedWith(RegisterAs.class);
     }
 
