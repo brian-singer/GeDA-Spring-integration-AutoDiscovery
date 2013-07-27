@@ -1,5 +1,6 @@
 package io.github.mklew.geda.autodiscovery;
 
+import io.github.mklew.geda.autodiscovery.domain.NoopConverter;
 import io.github.mklew.geda.autodiscovery.domain.impl.PersonImpl;
 import io.github.mklew.geda.autodiscovery.dto.impl.PersonDtoImpl;
 import io.github.mklew.geda.autodiscovery.internal.RegisterAsSplitterImpl;
@@ -24,6 +25,7 @@ public class RegisterAsSplitterTest
         Set<Class<?>> toRegister = new HashSet<>();
         toRegister.add(PersonImpl.class);
         toRegister.add(PersonDtoImpl.class);
+        toRegister.add(NoopConverter.class);
 
         registerAsSplitter = new RegisterAsSplitterImpl();
 
@@ -31,7 +33,8 @@ public class RegisterAsSplitterTest
         DEA dea = registerAsSplitter.split(toRegister);
 
         // then
-        Assertions.assertThat(dea.getDtos()).contains(PersonDtoImpl.class);
-        Assertions.assertThat(dea.getEntities()).contains(PersonImpl.class);
+        Assertions.assertThat(dea.getDtos()).contains(PersonDtoImpl.class).hasSize(1);
+        Assertions.assertThat(dea.getEntities()).contains(PersonImpl.class).hasSize(1);
+        Assertions.assertThat(dea.getAdapters()).contains(NoopConverter.class).hasSize(1);
     }
 }
