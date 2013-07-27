@@ -7,9 +7,11 @@ package io.github.mklew.geda.autodiscovery.dto.impl;
 
 import com.inspiresoftware.lib.dto.geda.annotations.Dto;
 import com.inspiresoftware.lib.dto.geda.annotations.DtoField;
+import io.github.mklew.geda.autodiscovery.annotations.RegisterAs;
 import io.github.mklew.geda.autodiscovery.dto.PersonDto;
 
 @Dto
+@RegisterAs("personDtoKey")
 public class PersonDtoImpl implements PersonDto
 {
     @DtoField

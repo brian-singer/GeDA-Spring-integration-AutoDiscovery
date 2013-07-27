@@ -1,11 +1,13 @@
 package io.github.mklew.geda.autodiscovery.domain.impl;
 
+import io.github.mklew.geda.autodiscovery.annotations.RegisterAs;
 import io.github.mklew.geda.autodiscovery.domain.Person;
 
 /**
  * @author Marek Lewandowski
  * @since 7/27/13
  */
+@RegisterAs("personEntityKey")
 public class PersonImpl implements Person
 {
     private String firstName;
