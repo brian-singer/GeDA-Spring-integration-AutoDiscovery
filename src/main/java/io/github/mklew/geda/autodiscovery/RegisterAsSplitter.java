@@ -8,5 +8,5 @@ import java.util.Set;
  */
 public interface RegisterAsSplitter
 {
-    DtosAndEntites split(Set<Class<?>> toRegister);
+    DEA split(Set<Class<?>> toRegister);
 }

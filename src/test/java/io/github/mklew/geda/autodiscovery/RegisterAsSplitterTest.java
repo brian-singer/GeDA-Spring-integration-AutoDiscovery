@@ -28,10 +28,10 @@ public class RegisterAsSplitterTest
         registerAsSplitter = new RegisterAsSplitterImpl();
 
         // when
-        DtosAndEntites dtosAndEntites = registerAsSplitter.split(toRegister);
+        DEA dea = registerAsSplitter.split(toRegister);
 
         // then
-        Assertions.assertThat(dtosAndEntites.getDtos()).contains(PersonDtoImpl.class);
-        Assertions.assertThat(dtosAndEntites.getEntities()).contains(PersonImpl.class);
+        Assertions.assertThat(dea.getDtos()).contains(PersonDtoImpl.class);
+        Assertions.assertThat(dea.getEntities()).contains(PersonImpl.class);
     }
 }

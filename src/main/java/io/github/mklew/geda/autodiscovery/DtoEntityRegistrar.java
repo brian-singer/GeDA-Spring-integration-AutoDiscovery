@@ -28,15 +28,15 @@ public class DtoEntityRegistrar
     {
         registerAsAnnotationScanner.scan();
         final Set<Class<?>> classesAnnotatedWithRegisterAs = registerAsAnnotationScanner.getClassesAnnotatedWithRegisterAs();
-        final DtosAndEntites dtosAndEntites = splitter.split(classesAnnotatedWithRegisterAs);
+        final DEA dea = splitter.split(classesAnnotatedWithRegisterAs);
 
-        for(Class<?> clazz : dtosAndEntites.getDtos())
+        for(Class<?> clazz : dea.getDtos())
         {
             final RegisterAs annotation = clazz.getAnnotation(RegisterAs.class);
             dtoFactory.registerDto(annotation.value(), clazz.getName());
         }
 
-        for(Class<?> clazz : dtosAndEntites.getEntities())
+        for(Class<?> clazz : dea.getEntities())
         {
             Class<?> representAs = null;
             if (clazz.isAnnotationPresent(RepresentAs.class))

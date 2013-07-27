@@ -1,8 +1,8 @@
 package io.github.mklew.geda.autodiscovery.internal;
 
 import com.inspiresoftware.lib.dto.geda.annotations.Dto;
+import io.github.mklew.geda.autodiscovery.DEA;
 import io.github.mklew.geda.autodiscovery.RegisterAsSplitter;
-import io.github.mklew.geda.autodiscovery.DtosAndEntites;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class RegisterAsSplitterImpl implements RegisterAsSplitter
 {
-    @Override public DtosAndEntites split(Set<Class<?>> toRegister)
+    @Override public DEA split(Set<Class<?>> toRegister)
     {
         Set<Class<?>> dtos = new HashSet<>();
         Set<Class<?>> entities = new HashSet<>();
@@ -26,6 +26,6 @@ public class RegisterAsSplitterImpl implements RegisterAsSplitter
                 entities.add(clazz);
         }
 
-        return new DtosAndEntitesImpl(dtos, entities);
+        return new DEAImpl(dtos, entities);
     }
 }
