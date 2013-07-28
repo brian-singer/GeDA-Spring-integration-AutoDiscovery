@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
  * @author Marek Lewandowski
  * @since 7/27/13
  */
-public class BaseAutoDiscoveryTest  extends AbstractTestNGSpringContextTests
+abstract public class BaseAutoDiscoveryTest  extends AbstractTestNGSpringContextTests
 {
     @Autowired
     DTOSupport dtoSupport;
