@@ -18,5 +18,8 @@
     </bean>
 
     <bean id="adapterRegistrar" class="io.github.mklew.geda.autodiscovery.AutodiscoveryMappingAdapterRegistrar">
+        <constructor-arg>
+            <value>io.github.mklew.geda.autodiscovery.adapters</value>
+        </constructor-arg>
     </bean>
 </beans>
